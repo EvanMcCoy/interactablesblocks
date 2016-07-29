@@ -1,0 +1,67 @@
+name: InteractablesBlocks
+main: com.qwertyness.interactablesblocks.InteractablesBlocks
+version: 1.0
+description: Make interatable blocks that execute commands and send messages!
+author: Qwertyness
+depend: [Interactables]
+
+permissions:
+#Top Tier
+    ib.block.*:
+        description: gives all permissions from blockCommands.
+        children:
+            ib.block.create.*: true
+            ib.block.delete: true
+            ib.block.edit.*: true
+            ib.block.use.*: true
+
+#Second Tier
+    ib.block.create.*:
+        description: allows player to create blocks of any type.
+        children:
+            ib.block.create.console: true
+            ib.block.create.player: true
+            ib.block.create.special: true
+    ib.block.delete:
+        description: allows player to delete blocks.
+    ib.block.edit.*:
+        description: allows player to edit and attribute of a block.
+        children:
+            ib.block.edit.command.*: true
+            ib.block.edit.message: true
+            ib.block.edit.cooldown: true
+    ib.block.use.*:
+        description: allows player to use all blocks.
+
+#Third Tier
+    ib.block.create.console:
+        description: allows player to create a console type block.
+    ib.block.create.player:
+        description: allows player to create a player type block.
+    ib.block.create.special:
+        description: allows player to create a special type block.
+    ib.block.edit.command.*:
+        description: allows player to add or remove commands of any type to a block.
+        children:
+            ib.block.edit.command.console: true
+            ib.block.edit.command.player: true
+            ib.block.edit.command.special: true
+            ib.block.edit.command.remove: true
+    ib.block.edit.message:
+        description: allows player to add or remove messages from a block.
+    ib.block.edit.cooldown:
+        description: allows player to modify the cooldown of a block.
+    ib.block.edit.uses:
+        description: allows player to modify the use limit of a block.
+    ib.block.edit.action:
+        description: allows player to modify the action of a block.
+
+#4th Tier
+    ib.block.edit.command.console:
+        description: allows the player to add commands of the console type.
+    ib.block.edit.command.player:
+        description: allows player to add commands of the player type.
+    ib.block.edit.command.special:
+        description: allows player to add commands of the special type.
+    ib.block.edit.command.remove:
+        description: allows player to remove a command from block.
